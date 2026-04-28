@@ -6,63 +6,64 @@
 #    By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/21 13:39:08 by mbiusing          #+#    #+#              #
-#    Updated: 2026/04/07 16:32:27 by mbiusing         ###   ########.fr        #
+#    Updated: 2026/04/28 16:42:55 by mbiusing         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# name of static library
+NAME		= push_swap
 
-NAME =		push_swap.a
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror
+RM			= rm -rf
 
-SRC =		meow
+SRC_DIR		= srcs/
+OBJ_DIR		= objs/
+OPS_DIR		= $(SRC_DIR)operations/
 
-# automatic substitution
+LIBFT_DIR	= include/libft
+LIBFT		= $(LIBFT_DIR)/libft.a
 
-OBJ 		= $(SRC:.c=.o)
+INC			= -I include -I $(LIBFT_DIR)
 
-CC 			= cc
-CFLAGS 		= -Wall -Wextra -Werror
-AR 			= ar -rcs
-RM 			= rm -f
+MAIN		= $(SRC_DIR)main.c
 
-%.o: %.c
-	@$(CC) $(CFLAGS) -I. -c $< -o $@
+CORE		= $(SRC_DIR)parse.c \
+			  $(SRC_DIR)validate.c \
+			  $(SRC_DIR)stack.c \
+			  $(SRC_DIR)index.c \
+			  $(SRC_DIR)sort.c \
+			  $(SRC_DIR)sort_utils.c \
+			  $(SRC_DIR)free_error.c
 
-# make - builds library ( objs + libft.a ) #
+OPS			= $(OPS_DIR)swap_ops.c \
+			  $(OPS_DIR)push_ops.c \
+			  $(OPS_DIR)r_otate_ops.c \
+			  $(OPS_DIR)rr_otate_ops.c
+
+SRCS		= $(MAIN) $(CORE) $(OPS)
+
+OBJS		= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
 
 all: $(NAME)
 
-# create libft.a by archiving object files
+$(LIBFT):
+	@$(MAKE) -C $(LIBFT_DIR)
 
-$(NAME): $(OBJ)
-	@echo "Compiling..."
-	@$(AR) $(NAME) $(OBJ)
-	@echo "$(NAME) has just been birthed into existence along with its fellow object files"
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(INC) $(OBJS) $(LIBFT) -o $(NAME)
 
-# make bonus #
-bonus: all
-
-# make clean - remove all object files #
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
-	@$(RM) $(OBJ)
-	@echo "the object files has also just been wiped out"
-
-# make fclean - clean + remove libft.a #
+	$(RM) $(OBJ_DIR)
+	@$(MAKE) clean -C $(LIBFT_DIR)
 
 fclean: clean
-	@$(RM) $(NAME)
-	@echo "$(NAME) has also just been wiped out"
-
-# make re - rebuild #
+	$(RM) $(NAME)
+	@$(MAKE) fclean -C $(LIBFT_DIR)
 
 re: fclean all
 
-# make test FILE=ft_strtrim
-
-# test:
-# 	@$(CC) $(CFLAGS) $(FILE).c $(NAME) -o test.out
-# 	@echo "Made test for $(FILE).c..."
-# 	@./test.out
-
-.PHONY: clean fclean re all bonus #test
+.PHONY: all clean fclean re

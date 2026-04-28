@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 17:05:24 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 15:50:19 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/04/28 16:45:44 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ int		build_stack(t_stack *a, int *values, int size);
 int		is_sorted(t_stack *stack);
 
 /* INDEX */
-void	index_values(int *values, int size);
+int		get_rank(int *values, int index, int size);
+void	get_sorted_index(int *values, int size);
 
 /* SORT */
 void	sort_stack(t_stack *a, t_stack *b);
@@ -58,6 +59,10 @@ void	sort_two(t_stack *a);
 void	sort_three(t_stack *a);
 void	sort_small(t_stack *a, t_stack *b);
 void	radix_sort(t_stack *a, t_stack *b);
+
+/* SORT UTILS */
+int		get_max_bits(int size);
+int		find_min_pos(t_stack *a);
 
 /* OPERATIONS */
 

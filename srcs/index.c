@@ -6,13 +6,13 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:21:27 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 16:00:29 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/04/28 16:44:54 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static int	get_rank(int *values, int index, int size)
+int	get_rank(int *values, int index, int size)
 {
 	int	rank;
 	int	i;

@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 14:59:15 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 15:58:06 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/04/28 16:44:26 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int ac, char **av)
 	init_stack(&b);
 	if (!parse_input(ac, av, &values, &size))
 		error_exit();
-	index_values(values, size);
+	get_sorted_index(values, size);
 	if (!build_stack(&a, values, size))
 	{
 		free(values);
