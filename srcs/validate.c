@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:03:30 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 15:53:42 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/04/28 15:58:56 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ long	ft_atol(char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + str[i] - '0';
+		if (result > 2147483648)
+			return (2147483649);
 		i++;
 	}
 	return (result * sign);

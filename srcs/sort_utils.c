@@ -1,52 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index.c                                            :+:      :+:    :+:   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/28 15:21:27 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 16:00:29 by mbiusing         ###   ########.fr       */
+/*   Created: 2026/04/28 16:01:48 by mbiusing          #+#    #+#             */
+/*   Updated: 2026/04/28 16:02:40 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static int	get_rank(int *values, int index, int size)
+int	get_max_bits(int size)
 {
-	int	rank;
-	int	i;
+	int	max;
+	int	bits;
 
-	rank = 0;
-	i = 0;
-	while (i < size)
-	{
-		if (values[i] < values[index])
-			rank++;
-		i++;
-	}
-	return (rank);
+	max = size - 1;
+	bits = 0;
+	while ((max >> bits) != 0)
+		bits++;
+	return (bits);
 }
 
-void	get_sorted_index(int *values, int size)
+int	find_min_pos(t_stack *a)
 {
-	int	*copy;
-	int	i;
+	t_node	*cur;
+	int		min;
+	int		pos;
+	int		i;
 
-	copy = malloc(sizeof(int) * size);
-	if (!copy)
-		return ;
+	cur = a->head;
+	min = cur->num;
+	pos = 0;
 	i = 0;
-	while (i < size)
+	while (i < a->size)
 	{
-		copy[i] = get_rank(values, i, size);
+		if (cur->num < min)
+		{
+			min = cur->num;
+			pos = i;
+		}
+		cur = cur->next;
 		i++;
 	}
-	i = 0;
-	while (i < size)
-	{
-		values[i] = copy[i];
-		i++;
-	}
-	free(copy);
+	return (pos);
 }

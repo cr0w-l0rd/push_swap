@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_init.c                                       :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/28 15:03:35 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 15:53:02 by mbiusing         ###   ########.fr       */
+/*   Created: 2026/04/28 15:59:18 by mbiusing          #+#    #+#             */
+/*   Updated: 2026/04/28 15:59:58 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	init_stack(t_stack *stack)
 {
+	stack->size = 0;
 	stack->head = NULL;
 	stack->tail = NULL;
-	stack->size = 0;
 }
 
 t_node	*new_node(int value)
@@ -65,7 +65,24 @@ int	build_stack(t_stack *a, int *values, int size)
 		add_back(a, values[i]);
 		i++;
 	}
-	if (a->size != size)
-		return (0);
+	return (a->size == size);
+}
+
+int	is_sorted(t_stack *stack)
+{
+	t_node	*cur;
+	int		i;
+
+	if (!stack || stack->size < 2)
+		return (1);
+	cur = stack->head;
+	i = 0;
+	while (i < stack->size - 1)
+	{
+		if (cur->num > cur->next->num)
+			return (0);
+		cur = cur->next;
+		i++;
+	}
 	return (1);
 }
