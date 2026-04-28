@@ -29,7 +29,7 @@ parse.c
 - parse_input
 
 validate.c
-- is_valid_number
+- is_valid_num
 - ft_atol
 - check_dup
 

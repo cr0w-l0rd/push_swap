@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:36:14 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 17:30:52 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/04/28 17:47:26 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	fill_split(char **split, int *values, int *k)
 	j = 0;
 	while (split[j])
 	{
-		if (!is_valid_number(split[j]))
+		if (!is_valid_num(split[j]))
 			return (0);
 		n = ft_atol(split[j]);
 		if (n < -2147483648 || n > 2147483647)

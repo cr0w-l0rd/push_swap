@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 17:05:24 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 17:30:52 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/04/28 17:47:26 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		count_numbers(char **av);
 int		fill_values(char **av, int *values);
 
 /* VALIDATE */
-int		is_valid_number(char *str);
+int		is_valid_num(char *str);
 long	ft_atol(char *str);
 int		check_dup(int *values, int size);
 

@@ -6,13 +6,13 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:03:30 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 17:30:36 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/04/28 17:47:11 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	is_valid_number(char *str)
+int	is_valid_num(char *str)
 {
 	int	i;
 
