@@ -21,7 +21,7 @@ By completing this project, students strengthen their knowledge of:
 
 ```
 main.c
-- main program flow
+- main program :3
 
 parse.c
 - count_numbers
@@ -41,8 +41,6 @@ stack_init.c
 - new_node
 - add_back
 - build_stack
-
-stack_utils.c
 - is_sorted
 
 push_ops.c
@@ -65,9 +63,14 @@ reverse_ops.c
 - rrr
 
 sort.c
+- sort_stack
+- sort_three
+- sort_small
+- radix_sort
+
+sort_utils.c
 - get_max_bits
 - radix_sort
-- sort_stack
 
 free_error.c
 - free_stack
