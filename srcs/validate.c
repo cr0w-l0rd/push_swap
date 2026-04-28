@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:03:30 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 15:58:56 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/04/28 17:30:36 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ long	ft_atol(char *str)
 	return (result * sign);
 }
 
-int	has_duplicate(int *values, int size)
+int	check_dup(int *values, int size)
 {
 	int	i;
 	int	j;

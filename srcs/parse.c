@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:36:14 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 15:58:31 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/04/28 17:30:52 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	parse_input(int ac, char **av, int **values, int *size)
 		return (0);
 	if (!fill_values(av, *values))
 		return (free(*values), 0);
-	if (has_duplicate(*values, *size))
+	if (check_dup(*values, *size))
 		return (free(*values), 0);
 	return (1);
 }
