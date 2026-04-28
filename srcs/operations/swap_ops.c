@@ -1,37 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   swap_ops.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/07 17:05:24 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 15:00:15 by mbiusing         ###   ########.fr       */
+/*   Created: 2026/04/28 15:03:33 by mbiusing          #+#    #+#             */
+/*   Updated: 2026/04/28 15:35:45 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../../include/push_swap.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "./libft/libft.h"
-
-typedef struct s_node
+static void	swap(t_stack *stack)
 {
-	int				num;
-	struct s_node	*next;
-	struct s_node	*prev;
-}				t_node;
+	int	tmp;
 
-typedef struct s_stack
+	if (!stack || stack->size < 2)
+		return ;
+	tmp = stack->head->num;
+	stack->head->num = stack->head->next->num;
+	stack->head->next->num = tmp;
+}
+
+void	sa(t_stack *a)
 {
-	int				size;
-	struct s_node	*head;
-	struct s_node	*tail;
-}				t_stack;
+	swap(a);
+	write(1, "sa\n", 3);
+}
 
-t_node	*create_node(int value);
+void	sb(t_stack *b)
+{
+	swap(b);
+	write(1, "sb\n", 3);
+}
 
-#endif
+void	ss(t_stack *a, t_stack *b)
+{
+	swap(a);
+	swap(b);
+	write(1, "ss\n", 3);
+}

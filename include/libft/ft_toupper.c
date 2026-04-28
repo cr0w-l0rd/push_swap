@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: mbiusing <mbiusing@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/07 16:27:44 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/10 12:33:55 by mbiusing         ###   ########.fr       */
+/*   Created: 2025/10/25 17:01:50 by mbiusing          #+#    #+#             */
+/*   Updated: 2025/10/25 17:06:14 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	main(int argc, char **argv)
+int	ft_toupper(int c)
 {
-	t_node	*input;
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
+}
 
-	if (argc < 2)
+/*
+#include <stdio.h>
+int	main(int argc, char *argv[])
+{
+	if (argc != 2)
+	{
+		printf("use it liddis : a.out c");
 		return (1);
-	input = parse_input(argc, argv);
+	}
+
+	char c = ft_toupper(*argv[1]);
+	printf("%c", c);
 	return (0);
 }
+*/

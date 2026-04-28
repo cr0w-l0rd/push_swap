@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/07 17:05:24 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 15:00:15 by mbiusing         ###   ########.fr       */
+/*   Created: 2025/10/25 05:00:56 by mbiusing          #+#    #+#             */
+/*   Updated: 2025/10/25 05:11:23 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "./libft/libft.h"
-
-typedef struct s_node
+size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size)
 {
-	int				num;
-	struct s_node	*next;
-	struct s_node	*prev;
-}				t_node;
+	size_t	src_len;
 
-typedef struct s_stack
-{
-	int				size;
-	struct s_node	*head;
-	struct s_node	*tail;
-}				t_stack;
-
-t_node	*create_node(int value);
-
-#endif
+	src_len = ft_strlen(src);
+	if (src_len + 1 < dest_size)
+		ft_memcpy(dest, src, src_len + 1);
+	else if (dest_size != 0)
+	{
+		ft_memcpy(dest, src, dest_size - 1);
+		dest[dest_size - 1] = 0;
+	}
+	return (src_len);
+}

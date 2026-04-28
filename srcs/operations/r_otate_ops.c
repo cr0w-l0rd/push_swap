@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   r_otate_ops.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/07 17:05:24 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 15:00:15 by mbiusing         ###   ########.fr       */
+/*   Created: 2026/04/28 15:07:49 by mbiusing          #+#    #+#             */
+/*   Updated: 2026/04/28 15:19:02 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../../include/push_swap.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "./libft/libft.h"
-
-typedef struct s_node
+void	rotate(t_stack *stack)
 {
-	int				num;
-	struct s_node	*next;
-	struct s_node	*prev;
-}				t_node;
+	if (!stack || stack->size < 2)
+		return ;
+	stack->head = stack->head->next;
+	stack->tail = stack->tail->next;
+}
 
-typedef struct s_stack
+void	ra(t_stack *a)
 {
-	int				size;
-	struct s_node	*head;
-	struct s_node	*tail;
-}				t_stack;
+	rotate(a);
+	write(1, "ra\n", 3);
+}
 
-t_node	*create_node(int value);
+void	rb(t_stack *b)
+{
+	rotate(b);
+	write(1, "rb\n", 3);
+}
 
-#endif
+void	rr(t_stack *a, t_stack *b)
+{
+	rotate(a);
+	rotate(b);
+	write(1, "rr\n", 3);
+}
