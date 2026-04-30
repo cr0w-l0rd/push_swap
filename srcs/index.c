@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:21:27 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 16:44:54 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/04/30 19:42:16 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,23 +30,23 @@ int	get_rank(int *values, int index, int size)
 
 void	get_sorted_index(int *values, int size)
 {
-	int	*copy;
 	int	i;
+	int	*ranked;
 
-	copy = malloc(sizeof(int) * size);
-	if (!copy)
+	ranked = malloc(sizeof(int) * size);
+	if (!ranked)
 		return ;
 	i = 0;
 	while (i < size)
 	{
-		copy[i] = get_rank(values, i, size);
+		ranked[i] = get_rank(values, i, size);
 		i++;
 	}
 	i = 0;
 	while (i < size)
 	{
-		values[i] = copy[i];
+		values[i] = ranked[i];
 		i++;
 	}
-	free(copy);
+	free(ranked);
 }

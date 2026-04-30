@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:59:18 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 15:59:58 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/04/30 20:23:42 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ t_node	*new_node(int value)
 	return (node);
 }
 
-void	add_back(t_stack *stack, int value)
+int	add_back(t_stack *stack, int value)
 {
 	t_node	*node;
 
 	node = new_node(value);
 	if (!node)
-		return ;
+		return (0);
 	if (stack->size == 0)
 	{
 		stack->head = node;
@@ -53,6 +53,7 @@ void	add_back(t_stack *stack, int value)
 		stack->tail = node;
 	}
 	stack->size++;
+	return (1);
 }
 
 int	build_stack(t_stack *a, int *values, int size)
@@ -62,10 +63,11 @@ int	build_stack(t_stack *a, int *values, int size)
 	i = 0;
 	while (i < size)
 	{
-		add_back(a, values[i]);
+		if (!add_back(a, values[i]))
+			return (0);
 		i++;
 	}
-	return (a->size == size);
+	return (1);
 }
 
 int	is_sorted(t_stack *stack)

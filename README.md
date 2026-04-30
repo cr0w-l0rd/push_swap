@@ -25,7 +25,6 @@ main.c
 
 parse.c
 - count_numbers
-- fill_values
 - parse_input
 
 validate.c

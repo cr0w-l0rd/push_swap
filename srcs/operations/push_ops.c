@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:08:38 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 15:18:41 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/04/30 20:41:29 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	remove_head(t_stack *stack)
 {
-	t_node	*old;
+	t_node	*dead;
 
-	old = stack->head;
+	dead = stack->head;
 	if (stack->size == 1)
 	{
 		stack->head = NULL;
@@ -24,7 +24,7 @@ void	remove_head(t_stack *stack)
 	}
 	else
 	{
-		stack->head = old->next;
+		stack->head = dead->next;
 		stack->tail->next = stack->head;
 		stack->head->prev = stack->tail;
 	}

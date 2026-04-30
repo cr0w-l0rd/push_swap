@@ -6,14 +6,14 @@
 #    By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/21 13:39:08 by mbiusing          #+#    #+#              #
-#    Updated: 2026/04/28 17:20:43 by mbiusing         ###   ########.fr        #
+#    Updated: 2026/04/30 20:38:53 by mbiusing         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= push_swap
 
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g
 RM			= rm -rf
 
 SRC_DIR		= srcs/

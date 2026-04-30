@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:36:14 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 17:47:26 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/04/30 17:07:01 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,58 +35,58 @@ int	count_numbers(char **av)
 	return (count);
 }
 
-static int	fill_split(char **split, int *values, int *k)
-{
-	int		j;
-	long	n;
-
-	j = 0;
-	while (split[j])
-	{
-		if (!is_valid_num(split[j]))
-			return (0);
-		n = ft_atol(split[j]);
-		if (n < -2147483648 || n > 2147483647)
-			return (0);
-		values[(*k)++] = (int)n;
-		j++;
-	}
-	return (1);
-}
-
-int	fill_values(char **av, int *values)
+int	parse_split_tokens(char **tokens, int *numbers, int *index)
 {
 	int		i;
-	int		k;
-	char	**split;
+	long	number;
 
-	i = 1;
-	k = 0;
-	while (av[i])
+	i = 0;
+	while (tokens[i])
 	{
-		split = ft_split(av[i], ' ');
-		if (!split || !split[0])
-			return (free_split(split), 0);
-		if (!fill_split(split, values, &k))
-			return (free_split(split), 0);
-		free_split(split);
+		if (!is_valid_num(tokens[i]))
+			return (0);
+		number = ft_atol(tokens[i]);
+		if (number < INT_MIN || number > INT_MAX)
+			return (0);
+		numbers[(*index)++] = (int)number;
 		i++;
 	}
 	return (1);
 }
 
-int	parse_input(int ac, char **av, int **values, int *size)
+int	parse_arg(char **av, int *numbers)
+{
+	int		arg_i;
+	int		num_i;
+	char	**tokens;
+
+	arg_i = 1;
+	num_i = 0;
+	while (av[arg_i])
+	{
+		tokens = ft_split(av[arg_i], ' ');
+		if (!tokens || !tokens[0])
+			return (free_split(tokens), 0);
+		if (!parse_split_tokens(tokens, numbers, &num_i))
+			return (free_split(tokens), 0);
+		free_split(tokens);
+		arg_i++;
+	}
+	return (1);
+}
+
+int	parse_input(int ac, char **av, int **numbers, int *size)
 {
 	(void)ac;
 	*size = count_numbers(av);
 	if (*size <= 0)
 		return (0);
-	*values = malloc(sizeof(int) * (*size));
-	if (!*values)
+	*numbers = malloc(sizeof(int) * (*size));
+	if (!*numbers)
 		return (0);
-	if (!fill_values(av, *values))
-		return (free(*values), 0);
-	if (check_dup(*values, *size))
-		return (free(*values), 0);
+	if (!parse_arg(av, *numbers))
+		return (free(*numbers), 0);
+	if (check_dup(*numbers, *size))
+		return (free(*numbers), 0);
 	return (1);
 }

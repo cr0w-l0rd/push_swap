@@ -6,16 +6,16 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 17:05:24 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/28 17:47:26 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/04/30 20:24:00 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 # include "./libft/libft.h"
 
 typedef struct s_node
@@ -35,7 +35,6 @@ typedef struct s_stack
 /* PARSE */
 int		parse_input(int ac, char **av, int **values, int *size);
 int		count_numbers(char **av);
-int		fill_values(char **av, int *values);
 
 /* VALIDATE */
 int		is_valid_num(char *str);
@@ -45,7 +44,7 @@ int		check_dup(int *values, int size);
 /* STACK */
 void	init_stack(t_stack *stack);
 t_node	*new_node(int value);
-void	add_back(t_stack *stack, int value);
+int	add_back(t_stack *stack, int value);
 int		build_stack(t_stack *a, int *values, int size);
 int		is_sorted(t_stack *stack);
 
