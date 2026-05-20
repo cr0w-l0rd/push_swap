@@ -6,7 +6,7 @@
 #    By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/21 13:39:08 by mbiusing          #+#    #+#              #
-#    Updated: 2026/04/30 20:38:53 by mbiusing         ###   ########.fr        #
+#    Updated: 2026/05/18 11:45:01 by mbiusing         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,18 +50,18 @@ $(LIBFT):
 	@$(MAKE) -C $(LIBFT_DIR)
 
 $(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(INC) $(OBJS) $(LIBFT) -o $(NAME)
+	@$(CC) $(CFLAGS) $(INC) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	mkdir -p $(@D)
-	$(CC) $(CFLAGS) $(INC) -c $< -o $@
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ_DIR)
+	@$(RM) $(OBJ_DIR)
 	@$(MAKE) clean -C $(LIBFT_DIR)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 	@$(MAKE) fclean -C $(LIBFT_DIR)
 
 re: fclean all
