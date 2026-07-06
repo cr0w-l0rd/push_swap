@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: mbiusing <mbiusing@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:36:14 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/30 17:07:01 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/07/06 22:42:37 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,15 @@ int	parse_arg(char **av, int *numbers)
 	{
 		tokens = ft_split(av[arg_i], ' ');
 		if (!tokens || !tokens[0])
-			return (free_split(tokens), 0);
+		{
+			free_split(tokens);
+			return (0);
+		}
 		if (!parse_split_tokens(tokens, numbers, &num_i))
-			return (free_split(tokens), 0);
+		{
+			free_split(tokens);
+			return (0);
+		}
 		free_split(tokens);
 		arg_i++;
 	}
@@ -85,8 +91,14 @@ int	parse_input(int ac, char **av, int **numbers, int *size)
 	if (!*numbers)
 		return (0);
 	if (!parse_arg(av, *numbers))
-		return (free(*numbers), 0);
+	{
+		free(*numbers);
+		return (0);
+	}
 	if (check_dup(*numbers, *size))
-		return (free(*numbers), 0);
+	{
+		free(*numbers);
+		return (0);
+	}
 	return (1);
 }
