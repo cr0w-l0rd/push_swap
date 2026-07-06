@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: mbiusing <mbiusing@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 17:05:24 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/30 20:24:00 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/07/06 22:31:10 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		check_dup(int *values, int size);
 /* STACK */
 void	init_stack(t_stack *stack);
 t_node	*new_node(int value);
-int	add_back(t_stack *stack, int value);
+int		add_back(t_stack *stack, int value);
 int		build_stack(t_stack *a, int *values, int size);
 int		is_sorted(t_stack *stack);
 
