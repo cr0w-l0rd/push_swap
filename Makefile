@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+         #
+#    By: mbiusing <mbiusing@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/21 13:39:08 by mbiusing          #+#    #+#              #
-#    Updated: 2026/05/18 11:45:01 by mbiusing         ###   ########.fr        #
+#    Updated: 2026/07/06 23:14:26 by mbiusing         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

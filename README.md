@@ -4,78 +4,14 @@
 
 ## DESCRIPTION
 
-`push_swap` is a sorting algorithm project that focuses on sorting a stack of integers using a limited set of operations.
+`push_swap` is a sorting algorithm project that focuses on sorting a stack of integers (using a limited set of operations).
 
-The goal of this project is to understand algorithmic efficiency and optimize the number of operations required to sort data.
+The goal of this project is to optimize the number of operations required to sort the numbers.
 
-This project introduces concepts such as stack manipulation, algorithm design, and complexity optimization under constraints.
+This project introduces concepts such as:
 
-By completing this project, students strengthen their knowledge of:
-
-- data structures (stacks)
-- sorting algorithms
-- algorithm optimization and complexity
-- problem-solving under constraints
-
-### Program Structure
-
-```
-main.c
-- main program :3
-
-parse.c
-- count_numbers
-- parse_input
-
-validate.c
-- is_valid_num
-- ft_atol
-- check_dup
-
-simplify.c
-- convert OG numbers into indexes
-
-stack_init.c
-- init_stack
-- new_node
-- add_back
-- build_stack
-- is_sorted
-
-push_ops.c
-- pa
-- pb
-
-swap_ops.c
-- sa
-- sb
-- ss
-
-rotate_ops.c
-- ra
-- rb
-- rr
-
-reverse_ops.c
-- rra
-- rrb
-- rrr
-
-sort.c
-- sort_stack
-- sort_three
-- sort_small
-- radix_sort
-
-sort_utils.c
-- get_max_bits
-- radix_sort
-
-free_error.c
-- free_stack
-- free_split
-- error_exit
-```
+- stacks (a type of data structure)
+- sorting algorithms (such as radix, turk sort and so on)
 
 ## Things To Figure Out Throughout This Project
 
@@ -102,12 +38,14 @@ free_error.c
 4. [abbastoof's push_swap github](https://github.com/abbastoof/Push_Swap) -> got stumped on how to simplify the numbers to get the sorted index
 5. [push_swap tester](https://github.com/gemartin99/Push-Swap-Tester) -> basic checker
 6. [circular doubly linked list](https://www.geeksforgeeks.org/dsa/introduction-to-circular-doubly-linked-list/)
+7. [how to read valgrind output](https://stackoverflow.com/questions/2479684/understanding-the-valgrind-output)
+8. [stacks in c](https://www.geeksforgeeks.org/c/implement-stack-in-c/)
 
 ### Resources Peers Suggested:
 
-1. []()
+1. [guide on valgrind usage -> suggested by Erica Chin](https://www.cs.swarthmore.edu/~newhall/unixhelp/valgrind.php)
 
 ### AI Usage:
 - Explain pros & cons of the type of data structure to implement (also asked some peers why they picked certain data structures)
-- Explain certain parts that i just cant with bro
+- Explain certain parts that i just cant with bro (like understanding what the valgrind output means)
 - Help with debugging
