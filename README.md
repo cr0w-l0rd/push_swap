@@ -10,7 +10,7 @@ The goal of this project is to optimize the number of operations required to sor
 
 This project introduces concepts such as:
 
-- stacks (a type of data structure)
+- stacks
 - sorting algorithms (such as radix, turk sort and so on)
 
 ## Things To Figure Out Throughout This Project
