@@ -4,7 +4,7 @@
 
 ## DESCRIPTION
 
-`push_swap` is a sorting algorithm project that focuses on sorting a stack of integers (using a limited set of operations).
+`push_swap` is a sorting algorithm project that sorts a stack of integers (using a limited set of operations).
 
 The goal of this project is to optimize the number of operations required to sort the numbers.
 
@@ -90,6 +90,20 @@ Basic steps to perform radix sort on the array [170, 45, 75, 90, 802, 24, 2, 66]
 **Step 5**: It is now sorted in ascending order.
 
 **2, 24, 45, 66, 75, 90, 175, 802** !!!
+
+## How did I implement Radix Sort into push_swap?
+
+Since we can only use two stacks that is **a** and **b**, I used `&` (which is a Bitwise Operator) and `>>` (Right Shift Operator) to compare the digits in binary form.
+
+But before doing that, I had to take negative numbers and huge numbers into consideration as well. So to optimise the number of operations, I "normalised" the input numbers, aka turn them into index numbers.
+
+Example:
+
+Before Normalisation: 67, -67, 0, 100, 2, -3
+
+After Normalisation: 4, 0, 2, 5, 3, 1
+
+
 
 ## RESOURCES
 
