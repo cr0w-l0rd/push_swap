@@ -40,6 +40,7 @@ This project introduces concepts such as:
 6. [circular doubly linked list](https://www.geeksforgeeks.org/dsa/introduction-to-circular-doubly-linked-list/)
 7. [how to read valgrind output](https://stackoverflow.com/questions/2479684/understanding-the-valgrind-output)
 8. [stacks in c](https://www.geeksforgeeks.org/c/implement-stack-in-c/)
+9. [push swap visualiser](https://push-swap-visualizer.vercel.app/)
 
 ### Resources Peers Suggested:
 
