@@ -2,7 +2,7 @@
 
 # push_swap
 
-## DESCRIPTION
+## Description
 
 `push_swap` is a sorting algorithm project that sorts a stack of integers (using a limited set of operations).
 
