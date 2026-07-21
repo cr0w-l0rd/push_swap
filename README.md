@@ -13,6 +13,40 @@ This project introduces concepts such as:
 - stacks
 - sorting algorithms (such as radix, turk sort and so on)
 
+## Instructions
+### Compilation
+
+Compile the project using make:
+
+```
+make
+```
+which will create:
+
+```
+./push_swap
+```
+that is executable
+
+### Execution
+
+Run the program with a list of integers as arguments to get the list of operations needed to sort it:
+
+```
+./push_swap 3 2 1
+```
+Run the program with the checker from the resources of the Push_swap project page.
+
+```
+./push_swap 3 2 1 | ./checker_linux 3 2 1
+```
+### Allowed Operations
+`pa`, `pb` — push the top element from one stack to the other
+
+`ra`, `rb`, `rr` — rotate a stack upward
+
+`rra`, `rrb`, `rrr` — rotate a stack downward
+
 ## Things To Figure Out Throughout This Project
 
 1. What sorting algorithm to do?
@@ -21,13 +55,42 @@ This project introduces concepts such as:
 4. How should I handle different types of input?
 5. How should I structure my code?
 
-## What Algorithm Should I Pick?
-#### Turk Sort
+## Algorithm Chosen : Radix Sort
 
-#### Radix Sort
-#### Dual-Pivot Quicksort
+### What is Radix Sort?
 
-### Final Pick (Radix Sort)
+It is a linear sorting algorithm (for fixed length digit counts) that sorts elements by processing them digit by digit.
+
+It is an efficient non-comparison sorting algorithm for sorting integers or strings with fixed-length keys as it compare digit by digit (or character by character).
+It repeatedly distributes the elements into buckets based on each digit's value. 
+
+By repeatedly sorting the elements by their significant digits, from the least significant to the most significant, it achieves the final sorted order.
+
+Basic steps to perform radix sort on the array [170, 45, 75, 90, 802, 24, 2, 66]:
+
+**Step 1**: Find the largest element, which is 802. It has three digits, so we will iterate three times.
+
+**Step 2**: Sort the elements based on the first place digit (X=0).
+
+| Unsorted | Sorted by first place digit |
+| --- | --- |
+| 17**0**, 4**5**, 7**5**, 9**0**, 80**2**, 2**4**, **2**, 6**6** | 170, 90, 802, 2, 24, 45, 75, 66 |
+
+**Step 3**: Sort the elements based on the tens/second place digit.
+
+| Unsorted | Sorted by tens/second place digit |
+| --- | --- |
+| 1**7**0, **9**0, 8**0**2, [**0**]2, **2**4, **4**5, **7**5, **6**6 | 802, 2, 24, 45, 66, 170, 75, 90|
+
+**Step 4**: Sort the elements based on the hundreds/third place digit.
+
+| Unsorted | Sorted by hundreds/third place digit |
+| --- | --- |
+| **8**02, [**0**][**0**]2, [**0**]24, [**0**]45, [**0**]66, 170, [**0**]75, [**0**]90 | 2, 24, 45, 66, 75, 90, 175, 802|
+
+**Step 5**: It is now sorted in ascending order.
+
+**2, 24, 45, 66, 75, 90, 175, 802** !!!
 
 ## RESOURCES
 
@@ -41,6 +104,7 @@ This project introduces concepts such as:
 7. [how to read valgrind output](https://stackoverflow.com/questions/2479684/understanding-the-valgrind-output)
 8. [stacks in c](https://www.geeksforgeeks.org/c/implement-stack-in-c/)
 9. [push swap visualiser](https://push-swap-visualizer.vercel.app/)
+10. [radix sort](https://www.geeksforgeeks.org/dsa/radix-sort/)
 
 ### Resources Peers Suggested:
 
