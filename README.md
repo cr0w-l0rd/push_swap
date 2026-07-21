@@ -50,10 +50,9 @@ Run the program with the checker from the resources of the Push_swap project pag
 ## Things To Figure Out Throughout This Project
 
 1. What sorting algorithm to do?
-2. What kind of data structure should I implement for the stack?
-3. What's better to do, Doubly Circular or just Doubly Linked list?
-4. How should I handle different types of input?
-5. How should I structure my code?
+2. What's better to do, Doubly Circular or just Doubly Linked list?
+3. How should I handle different types of input?
+4. How should I structure my code?
 
 ## Algorithm Chosen : Radix Sort
 
