@@ -128,6 +128,7 @@ Then this is repeated until the last digit place is iterated.
 8. [stacks in c](https://www.geeksforgeeks.org/c/implement-stack-in-c/)
 9. [push swap visualiser](https://push-swap-visualizer.vercel.app/)
 10. [radix sort](https://www.geeksforgeeks.org/dsa/radix-sort/)
+11. [bit left and right shift](https://www.geeksforgeeks.org/cpp/left-shift-right-shift-operators-c-cpp/)
 
 ### Resources Peers Suggested:
 

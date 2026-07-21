@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 17:05:24 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/07/06 22:31:10 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/07/21 16:42:53 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_stack
 }				t_stack;
 
 /* PARSE */
-int		parse_input(int ac, char **av, int **values, int *size);
+int		parse_input(char **av, int **values, int *size);
 int		count_numbers(char **av);
 
 /* VALIDATE */

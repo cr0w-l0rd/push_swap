@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: mbiusing <mbiusing@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 14:59:15 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/30 19:39:27 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/07/21 16:41:43 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int ac, char **av)
 	init_stack(&a);
 	init_stack(&b);
 	values = NULL;
-	if (!parse_input(ac, av, &values, &size))
+	if (!parse_input(av, &values, &size))
 		error_exit();
 	get_sorted_index(values, size);
 	if (!build_stack(&a, values, size))

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_ops.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: mbiusing <mbiusing@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:08:38 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/04/30 20:41:29 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/07/21 15:26:22 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	push(t_stack *dst, t_stack *src)
 {
 	t_node	*node;
 
-	if (!src || src->size == 0)
+	if (!dst || !src || src->size == 0)
 		return ;
 	node = src->head;
 	remove_head(src);

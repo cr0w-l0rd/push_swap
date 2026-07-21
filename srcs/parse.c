@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 15:36:14 by mbiusing          #+#    #+#             */
-/*   Updated: 2026/07/06 22:42:37 by mbiusing         ###   ########.fr       */
+/*   Updated: 2026/07/21 16:34:45 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,8 @@ int	parse_arg(char **av, int *numbers)
 	return (1);
 }
 
-int	parse_input(int ac, char **av, int **numbers, int *size)
+int	parse_input(char **av, int **numbers, int *size)
 {
-	(void)ac;
 	*size = count_numbers(av);
 	if (*size <= 0)
 		return (0);
