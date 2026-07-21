@@ -95,7 +95,7 @@ Basic steps to perform radix sort on the array [170, 45, 75, 90, 802, 24, 2, 66]
 
 Since we can only use two stacks that is **a** and **b**, I used `&` (which is a Bitwise Operator) and `>>` (Right Shift Operator) to compare the digits in binary form.
 
-But before doing that, I had to take negative numbers and huge numbers into consideration as well. So to optimise the number of operations, I "normalised" the input numbers, aka turn them into index numbers.
+But before doing that, I had to take negative numbers and huge numbers into consideration as well. So I "normalised" the input numbers, aka turn them into index numbers.
 
 Example:
 
