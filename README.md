@@ -60,7 +60,7 @@ Run the program with the checker from the resources of the Push_swap project pag
 
 It is a linear sorting algorithm (for fixed length digit counts) that sorts elements by processing them digit by digit.
 
-It is an efficient non-comparison sorting algorithm for sorting integers or strings with fixed-length keys as it compare digit by digit (or character by character).
+It is an efficient non-comparison sorting algorithm for sorting integers or strings with fixed-length keys as it compares digit by digit (or character by character).
 It repeatedly distributes the elements into buckets based on each digit's value. 
 
 By repeatedly sorting the elements by their significant digits, from the least significant to the most significant, it achieves the final sorted order.
@@ -85,17 +85,17 @@ Basic steps to perform radix sort on the array [170, 45, 75, 90, 802, 24, 2, 66]
 
 | Unsorted | Sorted by hundreds/third place digit |
 | --- | --- |
-| **8**02, [**0**][**0**]2, [**0**]24, [**0**]45, [**0**]66, 170, [**0**]75, [**0**]90 | 2, 24, 45, 66, 75, 90, 175, 802|
+| **8**02, [**0**][**0**]2, [**0**]24, [**0**]45, [**0**]66, 170, [**0**]75, [**0**]90 | 2, 24, 45, 66, 75, 90, 170, 802|
 
 **Step 5**: It is now sorted in ascending order.
 
-**2, 24, 45, 66, 75, 90, 175, 802** !!!
+**2, 24, 45, 66, 75, 90, 170, 802** !!!
 
 ## How did I implement Radix Sort into push_swap?
 
 Since we can only use two stacks that is **a** and **b**, I used `&` (which is a Bitwise Operator) and `>>` (Right Shift Operator) to compare the digits in binary form.
 
-But before doing that, I had to take negative numbers and huge numbers into consideration as well. So I "normalised" the input numbers, aka turn them into index numbers.
+But before doing that, I had to take negative numbers and huge numbers into consideration as well. So I "normalised" the input numbers, aka assign them/ turn them into index numbers.
 
 Example:
 
@@ -103,7 +103,17 @@ Before Normalisation: 67, -67, 0, 100, 2, -3
 
 After Normalisation: 4, 0, 2, 5, 3, 1
 
+So just like the original version of radix sort, we have to find the maximum digits of the biggest number, to figure out how many iterations of digit places do we have to go through.
 
+When sorting, we are grouping the stacks with;
+
+**a** holding the *1*s ( which is `ra` -ed)
+
+**b** holding the *0*s ( which is `pb` -ed)
+
+After each iteration, everything from stack **b** is `pa` -ed back to stack **a**
+
+Then this is repeated until the last digit place is iterated.
 
 ## RESOURCES
 
