@@ -6,7 +6,7 @@
 #    By: mbiusing <mbiusing@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/21 13:39:08 by mbiusing          #+#    #+#              #
-#    Updated: 2026/07/06 23:14:26 by mbiusing         ###   ########.fr        #
+#    Updated: 2026/07/21 09:57:03 by mbiusing         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ INC			= -I include -I $(LIBFT_DIR)
 
 MAIN		= $(SRC_DIR)main.c
 
-CORE		= $(SRC_DIR)parse.c \
+SOURCE		= $(SRC_DIR)parse.c \
 			  $(SRC_DIR)validate.c \
 			  $(SRC_DIR)stack.c \
 			  $(SRC_DIR)index.c \
@@ -40,7 +40,7 @@ OPS			= $(OPS_DIR)swap_ops.c \
 			  $(OPS_DIR)r_otate_ops.c \
 			  $(OPS_DIR)rr_otate_ops.c
 
-SRCS		= $(MAIN) $(CORE) $(OPS)
+SRCS		= $(MAIN) $(SOURCE) $(OPS)
 
 OBJS		= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
 
